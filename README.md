@@ -52,12 +52,38 @@ Model Waveform
 <img width="706" height="167" alt="image" src="https://github.com/user-attachments/assets/bff0d8fd-d679-444e-af37-0b34585853c1" />
 
 Program
+```
+Am=8.4;
+fm=1424;
+Ac=12.6;
+fc=14240;
+fs=132400;
+t=0:1/fs:2/fm;
+em1=Am*cos(2*3.14*fm*t);
+subplot(4,1,1);
+plot(t,em1)
+ec1=Ac*cos(2*3.14*fc*t);
+subplot(4,1,2);
+plot(t,ec1)
+em2=Am*sin(2*3.14*fm*t);
+ec2=Ac*sin(2*3.14*fc*t);
+eDSBSC1=em1.*ec1;
+eDSBSC2=em2.*ec2;
+eLSB=eDSBSC1+eDSBSC2;
+subplot(4,1,3);
+plot(t,eLSB)
+eUSB=eDSBSC1-eDSBSC2;
+subplot(4,1,4);
+plot(t,eUSB)
 
+```
 OUTPUT WAVEFORM
+<img width="1915" height="1112" alt="Screenshot 2026-05-21 093026" src="https://github.com/user-attachments/assets/af81050d-4b4b-4ea7-bed5-c9f4c57b8956" />
 
 TABULATION
 
 
+<img width="1280" height="719" alt="WhatsApp Image 2026-05-21 at 9 31 31 AM" src="https://github.com/user-attachments/assets/102bae9f-25b2-42f4-af2f-4f23cd659a71" />
 
 
 
